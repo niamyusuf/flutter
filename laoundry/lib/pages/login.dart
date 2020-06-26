@@ -83,8 +83,8 @@ class _LoginPageState extends State<LoginPage> {
           Container(
             height: MediaQuery.of(context).size.height/0.5, //2.4
             decoration: BoxDecoration(
-              color: Colors.white10,
-              image: DecorationImage(image: AssetImage('assets/images/koala.jpg'),
+              color: Colors.white,
+              image: DecorationImage(image: AssetImage('assets/images/bg.jpg'),
               fit: BoxFit.cover,
               ),
             ),
@@ -109,6 +109,8 @@ class _LoginPageState extends State<LoginPage> {
                       if (isValUsername)
                         Validate(message: 'Email tidak boleh kosong'),
                       TextField(
+                        autocorrect: false ,
+                        controller: userController,
                         decoration: InputDecoration(
                           suffixIcon: Icon(
                             Icons.email, color: Colors.orange[200],
@@ -120,6 +122,8 @@ class _LoginPageState extends State<LoginPage> {
                       //Password
                       TextField(
                         obscureText: isSecure,
+                        autocorrect: false,
+                        controller: passController,
                         decoration: InputDecoration(
                           suffixIcon: IconButton(
                             icon: (isSecure)

@@ -70,7 +70,7 @@ class _MainTabPageState extends State<MainTabPage> {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: SafeArea(
-        top: isTopBar,
+        // top: isTopBar,
         child: _listPage[_selectedTabIndex],
       ),
       bottomNavigationBar: _bottomNavBar,
