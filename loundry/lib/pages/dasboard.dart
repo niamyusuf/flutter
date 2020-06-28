@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loundry/pages/home.dart';
-import 'package:loundry/pages/pesanan.dart';
-import 'package:loundry/pages/profile.dart';
 
 class Beranda extends StatefulWidget {
   Beranda({Key key}) : super(key: key);
@@ -15,42 +12,34 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading:
-            // new Row(
-            //   mainAxisAlignment: MainAxisAlignment.start,
-            //   children: <Widget>[
-            //     Image.asset(
-            //       "assets/images/bg.jpg",
-            //       fit: BoxFit.cover,
-            //     ),
-            //     // Container(
-            //     //     padding: const EdgeInsets.all(1.0), child: Text('Solid Shop'))
-            //   ],
-            // ),
-            Icon(Icons.home, color: Colors.black),
-        elevation: 0,
-        backgroundColor: Colors.orangeAccent,
-        title: Text("Dasboard"),
-      ),
+      // appBar: AppBar(
+      //   leading:
+      //       // new Row(
+      //       //   mainAxisAlignment: MainAxisAlignment.start,
+      //       //   children: <Widget>[
+      //       //     Image.asset(
+      //       //       "assets/images/bg.jpg",
+      //       //       fit: BoxFit.cover,
+      //       //     ),
+      //       //     // Container(
+      //       //     //     padding: const EdgeInsets.all(1.0), child: Text('Solid Shop'))
+      //       //   ],
+      //       // ),
+      //       Icon(Icons.home, color: Colors.black),
+      //   elevation: 0,
+      //   backgroundColor: Colors.orangeAccent,
+      //   title: Text("Dasboard"),
+      // ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
         color: Colors.grey[300],
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
-          color: Colors.grey[300],
-          child: GridView.count(
-            crossAxisCount: 4,
-            padding: EdgeInsets.all(3),
-            children: <Widget>[
-              makeDasboardItem("Tambah Member", Icons.people_outline, ""),
-              makeDasboardItem("Transaksi", Icons.add_shopping_cart, "/home"),
-              makeDasboardItem(
-                  "Keuangan", Icons.account_balance_wallet, "/pesanan"),
-              makeDasboardItem("List", Icons.view_list, ""),
-              makeDasboardItem("List", Icons.payment, "/profile")
-            ],
-          ),
+        child: Column(
+          children: <Widget>[
+            judul(),
+            Flexible(
+              child: menu(),
+            ),
+          ],
         ),
         // Container(
         //   child: ListView.builder(
@@ -66,6 +55,25 @@ class _BerandaState extends State<Beranda> {
         //     },
         //   ),
         // ),
+      ),
+    );
+  }
+
+  Widget menu() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+      color: Colors.grey[300],
+      child: GridView.count(
+        crossAxisCount: 4,
+        padding: EdgeInsets.all(3),
+        children: <Widget>[
+          makeDasboardItem("Tambah Member", Icons.people_outline, ""),
+          makeDasboardItem("Transaksi", Icons.add_shopping_cart, "/home"),
+          makeDasboardItem(
+              "Keuangan", Icons.account_balance_wallet, "/pesanan"),
+          makeDasboardItem("List", Icons.view_list, ""),
+          makeDasboardItem("List", Icons.payment, "/profile")
+        ],
       ),
     );
   }

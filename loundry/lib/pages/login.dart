@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'main_tab.dart';
 import 'package:loundry/widgets/validate.dart';
 
 class LoginPage extends StatefulWidget {
@@ -84,11 +83,12 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height / 1,
+            // constraints: BoxConstraints.expand(),
             decoration: BoxDecoration(
-              color: Colors.amber.shade50,
+              color: Colors.white,
               image: DecorationImage(
                 image: AssetImage('assets/images/bg.jpg'),
-                // fit: BoxFit.cover,
+                // fit: BoxFit.fill,
                 alignment: Alignment.topCenter,
               ),
             ),
@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
               width: MediaQuery.of(context).size.width,
               child: Card(
                 margin: const EdgeInsets.all(1),
-                color: Colors.amber.shade50,
+                color: Colors.white,
                 elevation: 8, //ketebalannya
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -183,15 +183,42 @@ class _LoginPageState extends State<LoginPage> {
                             top: 20, bottom: 5, right: 15.0),
                         child: Align(
                           alignment: Alignment.bottomRight,
-                          child: Text(
-                            "Forgot Password",
-                            style: TextStyle(
-                              color: Colors.blue[400],
-                              fontWeight: FontWeight.bold,
-                            ),
+                          child: Row(
+                            children: <Widget>[
+                              Column(
+                                children: <Widget>[
+                                  new InkWell(
+                                    child: Text(
+                                      "Register",
+                                      style: TextStyle(
+                                          color: Colors.blue[400],
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    onTap: () {
+                                      Navigator.of(context)
+                                          .pushNamed("/register");
+                                    },
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 25.0,
+                              ),
+                              Column(
+                                children: <Widget>[
+                                  Text(
+                                    "Forgot Password",
+                                    style: TextStyle(
+                                      color: Colors.blue[400],
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

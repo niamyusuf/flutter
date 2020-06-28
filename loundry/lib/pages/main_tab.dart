@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'dasboard.dart';
 import 'home.dart';
@@ -6,7 +5,7 @@ import 'pesanan.dart';
 import 'profile.dart';
 
 class MainTabPage extends StatefulWidget {
-  static const routeName = 'main-tab';
+  // static const routeName = 'main-tab';
   const MainTabPage({Key key}) : super(key: key);
   @override
   _MainTabPageState createState() => _MainTabPageState();
@@ -32,7 +31,7 @@ class _MainTabPageState extends State<MainTabPage> {
     final _listPage = [
       Beranda(),
       HomePage(),
-      PesananPage(),
+      // PesananPage(),
       ProfilePage(),
     ];
 
@@ -43,15 +42,15 @@ class _MainTabPageState extends State<MainTabPage> {
         activeIcon: Icon(Icons.home, color: Colors.orange),
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.add_shopping_cart),
+        icon: Icon(Icons.add_circle),
         title: Text('Transaksi'),
-        activeIcon: Icon(Icons.home, color: Colors.orange),
+        activeIcon: Icon(Icons.add_circle, color: Colors.orange),
       ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.track_changes),
-        title: Text('Pesanan'),
-        activeIcon: Icon(Icons.track_changes, color: Colors.orange),
-      ),
+      // BottomNavigationBarItem(
+      //   icon: Icon(Icons.track_changes),
+      //   title: Text('Pesanan'),
+      //   activeIcon: Icon(Icons.track_changes, color: Colors.orange),
+      // ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person),
         title: Text('Akun'),
